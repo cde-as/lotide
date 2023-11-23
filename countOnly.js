@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -7,10 +7,9 @@ const assertEqual = function (actual, expected) {
 };
 
 const countOnly = function(allItems, itemsToCount) {
-  // Create an object to store results, if firstNames exists add 1 to count
-  const result = {};
+  const result = {}; // Object stores results when name exists in itemsToCount
 
-  for (const name in allItems) { //for every name in the firstNames array
+  for (const name of allItems) { //for every name in the firstNames array
     if (itemsToCount[name]) { // if the name exists in itemsToCount object
       if (result[name]) { // and if the name already exists in the result object
         result[name] += 1; //then add 1
@@ -19,9 +18,9 @@ const countOnly = function(allItems, itemsToCount) {
         result[name] = 1; // if it does not exist set to 1
       }
     }
-    console.log(result);
-    return result;
   }
+  console.log(result);
+  return result; // Make sure return result is OUTSIDE of for loop
 };
 
 // --- TEST CODE---
@@ -46,6 +45,6 @@ const result1 = countOnly(firstNames, {
 });
 
 assertEqual(result1["Jason"], 1); //should pass
-assertEqual(result1["Karima"], undefined); //should pass
-//assertEqual(result1["Fang"], 2); //should pass
-//assertEqual(result1["Agouhanna"], undefined);
+assertEqual(result1["Karima"], undefined); //should pass because Karima does not exist
+assertEqual(result1["Fang"], 2); //should pass
+assertEqual(result1["Agouhanna"], undefined); //should pass because Agouhanna in result1 != true and does not get passed into result object.
