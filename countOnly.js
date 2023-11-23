@@ -10,7 +10,7 @@ const countOnly = function(allItems, itemsToCount) {
   const result = {}; // Object stores results when name exists in itemsToCount
 
   for (const name of allItems) { //for every name in the firstNames array
-    if (itemsToCount[name]) { // if the name exists in itemsToCount object
+    if (itemsToCount[name]) { // if the name exists in itemsToCount object then "true"
       if (result[name]) { // and if the name already exists in the result object
         result[name] += 1; //then add 1
         console.log(result);
