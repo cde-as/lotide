@@ -39,9 +39,8 @@ const findKeyByValue = function(object, titleOfShow) {
       return key;
     }
   }
-  return undefined; //if there isn't a matching key
+  return "undefined"; //if there isn't a matching key
 };
 
 console.log(findKeyByValue(bestTVShowsByGenre, "Breaking Bad"));
-assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "Breaking Bad"), "drama");
-//assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "Nonexistent Show"), undefined);
+assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "Breaking Bad"), "drama"); assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "Nonexistent Show"), "undefined");
