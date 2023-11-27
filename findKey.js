@@ -20,7 +20,7 @@ const findKey = function(object, valuePair) {
   return "undefined"; //if there isn't a matching key
 };
 
-findKey({
+const test1 = findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
   "noma":      { stars: 2 },
@@ -28,4 +28,6 @@ findKey({
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
 }, x => x.stars === 2); // => "noma"
+
+assertEqual(test1, 2);
 
