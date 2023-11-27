@@ -30,9 +30,9 @@ const takeUntil = function(array, callback) {
       break;
     }
     results.push(callback(item));
-    console.log('drink: ', item);
+    /*  console.log('drink: ', item);
     console.log('Is a type of tea: ', callback(item));
-    console.log("--------------");
+    console.log("--------------"); */
   }
   return results;
 };
