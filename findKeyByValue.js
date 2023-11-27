@@ -30,9 +30,18 @@ const bestTVShowsByGenre = {
   drama:  "Breaking Bad"
 };
 
-const showKeys = Object.keys(bestTVShowsByGenre);
-console.log(showKeys);
+const findKeyByValue = function(object, titleOfShow) {
+  const showKeys = Object.keys(bestTVShowsByGenre); // [action, comedy, drama]
 
+  for (let key of showKeys) { //lets us access each key from our array showKeys
+    //console.log(key); // [action, comedy, drama]
+    if (object[key] === titleOfShow) { //object[key] gives us access to the value pairs aka the name of the shows, and when it equals the function parameter we return
+      return key;
+    }
+  }
+  return undefined; //if there isn't a matching key
+};
 
-//findKeyByValue(bestTVShowsByGenre, "Breaking Bad");
-//assertEqual(findKeyByValue(bestTVShowsByGenre, "Breaking Bad"), "drama");
+console.log(findKeyByValue(bestTVShowsByGenre, "Breaking Bad"));
+assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "Breaking Bad"), "drama");
+//assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "Nonexistent Show"), undefined);
