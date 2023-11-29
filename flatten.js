@@ -26,12 +26,18 @@ const flatten = function(array) {
   const flattenedArray = [];
   
   for (let i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) { //if element is an array
+    if (Array.isArray(array[i])) { //if element is an array go into array
+      for (let j = 0; j < array[i].length; j++) { //inside of nested array extract values
+        flattenedArray.push(array[i][j]);
+      }
+    } else {
       flattenedArray.push(array[i]);
-      console.log(flattenedArray);
     }
   }
-
+  console.log(flattenedArray);
+  return flattenedArray; //Reminder: put return outside of for loop
 };
 
 flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
+
+assertArraysEqual((flatten([1, 2, [3, 4], 5, [6]])), [1,2,3,4,5,6]);
