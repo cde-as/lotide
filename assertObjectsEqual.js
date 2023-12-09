@@ -1,13 +1,7 @@
-const assertEqual = function(actual, expected) {
-
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 const eqArrays = function(firstArray, secondArray) {
+  if (firstArray.length !== secondArray.length) {
+    return false;
+  }
   for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] !== secondArray[i]) {
       return false;
@@ -23,7 +17,7 @@ const eqObjects = function(object1, object2) {
     return false;
   }
   const keys1 = Object.keys(object1); // gives us an array of keys from Object1
-  const keys2 = Object.keys(object2);
+  //const keys2 = Object.keys(object2);
 
   for (let key of keys1) {
     if (Array.isArray(object2[key]) && Array.isArray(object1[key])) {
@@ -62,11 +56,11 @@ const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "lon
 //We need to use that return value in combination with assertEquals to test if the function is working correctly.
 
 //console.log(eqObjects(shirtObject , anotherShirtObject)); // => true
-assertEqual(eqObjects(shirtObject , anotherShirtObject), true);
+
 // -----------------------
 
 eqObjects(shirtObject , longSleeveShirtObject); // => false
-assertObjectsEqual(eqObjects(shirtObject , longSleeveShirtObject), false);
+assertObjectsEqual(shirtObject,anotherShirtObject);
 
 // -----------------------
 assertObjectsEqual(shirtObject, longSleeveShirtObject);
