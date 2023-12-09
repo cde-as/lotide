@@ -1,12 +1,7 @@
-/* Instructions: we need to filter our data by removing some unwanted items 
+/* Write a function that takes in a source array and an itemsToRemove arrays and returns only the items from the source array that are not in the itemsToRemove array.
+ */
 
--Implement a function called "without" which will return a subset of a given array, removing unwanted elements.
--This function should take in a source array and a itemsToRemove array. It should return a new array with only those elements from source that are not present in the itemsToRemove array.
--Write a test case to make sure that the original array is not modified.
-*/
-
-
-const eqArrays = function(firstArray, secondArray) {
+const eqArrays = function (firstArray, secondArray) {
   for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] !== secondArray[i]) {
       console.log(false);
@@ -17,7 +12,7 @@ const eqArrays = function(firstArray, secondArray) {
   return true;
 };
 
-const assertArraysEqual = function(actual, expected) {
+const assertArraysEqual = function (actual, expected) {
   const areEqual = eqArrays(actual, expected);
 
   if (areEqual) {
@@ -27,29 +22,20 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-
-const without = function(source, itemsToRemove) {
+const without = function (source, itemsToRemove) {
   let wantedValue = [];
 
-    for (let i = 0; i < source.length; i++) {
-      if (!itemsToRemove.includes(source[i])) {
-        wantedValue.push(source[i]);
-      }  
+  for (let i = 0; i < source.length; i++) {
+    if (!itemsToRemove.includes(source[i])) {
+      wantedValue.push(source[i]);
     }
-    return wantedValue;
+  }
+  return wantedValue;
 };
-
-// TEST CODE
-/*console.log(without([1, 2, 3], [1])) // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
-
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-console.log(assertArraysEqual(words, ["hello", "world", "lighthouse"]));
-*/
 
 assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
 assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
 assertArraysEqual(without([1, 2, 3, 4, 5], [2, 4]), [1, 3, 5]);
 assertArraysEqual(without([1, 2, 3, 4, 5], []), [1, 2, 3, 4, 5]);
+
+module.exports = without;
