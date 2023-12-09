@@ -1,0 +1,26 @@
+{
+  "name": "@cde-as/lotide",
+  "version": "1.0.0",
+  "description": "LHL Lotide Project",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+   "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cde-as/lotide.git"
+  },
+  "author": "Chris D (https://github.com/cde-as)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cde-as/lotide/issues"
+  },
+  "homepage": "https://github.com/cde-as/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^9.2.2"
+  }
+}

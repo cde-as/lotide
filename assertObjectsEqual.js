@@ -64,3 +64,5 @@ assertObjectsEqual(shirtObject,anotherShirtObject);
 
 // -----------------------
 assertObjectsEqual(shirtObject, longSleeveShirtObject);
+
+module.exports = assertObjectsEqual;

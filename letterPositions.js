@@ -20,7 +20,8 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-//Needs to skip spaces
+// Write a function that takes in a string and returns all indices of letter positions in the string.
+
 const letterPositions = function(sentence) {
   const result = {};
 
@@ -37,7 +38,8 @@ const letterPositions = function(sentence) {
   return result;
 };
 
-
 // --- TEST CODE ---
 assertArraysEqual(letterPositions("hello").e, [1]);
 letterPositions("lighthouse in the house");
+
+module.exports = letterPositions;

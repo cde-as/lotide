@@ -7,18 +7,15 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-
 const findKey = function(object, valuePair) {
-  const valuePairKeys = Object.keys(object); // [Blue Hill, Akaleri, noma...]
+  const valuePairKeys = Object.keys(object);
   
   for (let key of valuePairKeys) { //lets us access each key from our array
-    //console.log(object[key].stars);
-    console.log(valuePair(object[key])); //NOTE: valuePair[key] is returning undefined.
-    if (object[key].stars === valuePair) { //object[key]: stars: 1,3,2,3,2,3
-      return key;
+    if (valuePair(object[key])) {
+      return key; // "Blue Hill", "Akaleri", etc.
     }
   }
-  return "undefined"; //if there isn't a matching key
+  return undefined; //if there isn't a matching key
 };
 
 const test1 = findKey({
@@ -30,5 +27,6 @@ const test1 = findKey({
   "Akelarre":  { stars: 3 }
 }, x => x.stars === 2); // => "noma"
 
-//assertEqual(test1, 2);
+assertEqual(test1, "noma");
 
+module.exports = findKey;

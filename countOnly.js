@@ -1,3 +1,5 @@
+const { count } = require("console");
+
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -13,14 +15,12 @@ const countOnly = function(allItems, itemsToCount) {
     if (itemsToCount[name]) { // if the name exists in itemsToCount object then "true"
       if (result[name]) { // and if the name already exists in the result object
         result[name] += 1; //then add 1
-        console.log(result);
       } else {
         result[name] = 1; // if it does not exist set to 1
       }
     }
   }
-  console.log(result);
-  return result; // Make sure return result is OUTSIDE of for loop
+  return result;
 };
 
 // --- TEST CODE---
@@ -48,3 +48,5 @@ assertEqual(result1["Jason"], 1); //should pass
 assertEqual(result1["Karima"], undefined); //should pass because Karima does not exist
 assertEqual(result1["Fang"], 2); //should pass
 assertEqual(result1["Agouhanna"], undefined); //should pass because Agouhanna in result1 != true and does not get passed into result object.
+
+module.exports = countOnly;

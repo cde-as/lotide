@@ -34,10 +34,10 @@ const flatten = function(array) {
       flattenedArray.push(array[i]);
     }
   }
-  console.log(flattenedArray);
-  return flattenedArray; //Reminder: put return outside of for loop
+  return flattenedArray;
 };
 
 flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
-
 assertArraysEqual((flatten([1, 2, [3, 4], 5, [6]])), [1,2,3,4,5,6]);
+
+module.exports = flatten;

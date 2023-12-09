@@ -4,11 +4,9 @@ const eqArrays = function(firstArray, secondArray) {
   }
   for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] !== secondArray[i]) {
-      //console.log(false);
       return false;
     }
   }
-  //console.log(true);
   return true;
 };
 
@@ -22,8 +20,8 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-//returns the key from value-pair
-// if there isn't a key that matches that value return undefined
+/* Write a function that takes in an object and a value and returns the first key that corresponds to that value. If there isn't a key that matches that value return undefined. */
+
 const bestTVShowsByGenre = {
   action: "The Last of Us",
   comedy: "Schitt's Creek",
@@ -42,5 +40,6 @@ const findKeyByValue = function(object, titleOfShow) {
   return "undefined"; //if there isn't a matching key
 };
 
-console.log(findKeyByValue(bestTVShowsByGenre, "Breaking Bad"));
 assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "Breaking Bad"), "drama"); assertArraysEqual(findKeyByValue(bestTVShowsByGenre, "Nonexistent Show"), "undefined");
+
+module.exports = findKeyByValue;

@@ -1,28 +1,12 @@
-//----------FIRST ITERATION---------
-/* const drinks = ["mocha", "latte", "americano", "cappuccino", "cortado"];
-
-const map = function(drinks, callback) {
-  console.log('array: ', drinks); //returns undefined
-  console.log('callback: ', callback); //returns undefines
-
-  const results = []; //returns empty array
-  return results;
-};
-
-console.log(map()); */
-// ------------------------------------------------------
-
 const eqArrays = function(firstArray, secondArray) {
   if (firstArray.length !== secondArray.length) {
     return false;
   }
   for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] !== secondArray[i]) {
-      //console.log(false);
       return false;
     }
   }
-  //console.log(true);
   return true;
 };
 
@@ -58,3 +42,5 @@ const lengthOfDrinks = map(drinks, callback);
 console.log(lengthOfDrinks);
 
 assertArraysEqual(lengthOfDrinks, [5,5,9,10,7]); // Should return true
+
+module.exports = map;

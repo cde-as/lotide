@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -9,7 +9,7 @@ const assertEqual = function (actual, expected) {
 //Function should take in a string and return a count of each letter
 // Return should be an object
 // Tip: You can use for...of loop with strings
-const countLetters = function (string) {
+const countLetters = function(string) {
   const result = {};
 
   for (let i = 0; i < string.length; i++) {
@@ -25,7 +25,7 @@ const countLetters = function (string) {
       }
     }
   }
-  //console.log(result);
+
   return result;
 };
 
@@ -33,7 +33,10 @@ const countLetters = function (string) {
 console.log(countLetters("LHL"));
 console.log(countLetters("apple"));
 
-//console.log(countLetters("LHL")["L"]); // Returns: 2 -> This gives us access to the value of the key "L"
+
 assertEqual(countLetters("LHL")["L"], 2);
+//When console.logged: 2 -> This gives us access to the value of the key "L" by using index
 assertEqual(countLetters("apple")["p"], 2);
 assertEqual(countLetters("apple")["a"], 2);
+
+module.exports = countLetters;
